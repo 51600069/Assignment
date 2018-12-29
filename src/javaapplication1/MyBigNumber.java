@@ -66,7 +66,7 @@ public class MyBigNumber {
                 
                 int tong = 0;// Khởi tạo biến tổng = 0 để cộng 2 kí tự cuối cùng lại với nhau
                 int nho = 0;// Khởi tạo số nhớ = 0 để khi cộng sẽ có vài trường hợp lớn hơn 9
-                String result = "";
+                String ketqua = "";
 		int i = 0;
                 ////Check user input empty string
                 if (num1.isEmpty() && !num2.isEmpty()) {
@@ -92,11 +92,11 @@ public class MyBigNumber {
 			so2 = p2 - '0'; //Bảng mã ASCII chữ thứ hai vị trí số char2
                         tong = (p1 - '0') + (p2 - '0') + nho;// chuyển kí tự thành số xong cộng cho số nhớ
 			cong = so1 + so2; // Cộng tổng hai số
-                        result = (tong % 10) + result;// Lấy kết quả tổng ở trên chia lấy dư cho 10 và ghép vào chuỗi kết quả
+                        ketqua = (tong % 10) + ketqua;// Lấy kết quả tổng ở trên chia lấy dư cho 10 và ghép vào chuỗi kết quả
                         nho = tong / 10;// Cập nhật lại số nhớ
 			if (i == 0) {
 				conver = "Bước " + j + " : lấy " + so1 + " cộng " + so2 + " được " + cong 
-						+ " , " + " ghi " + (tong % 10) + " , " + " nhớ " + nho + ", kết quả : " + result + "\n";
+						+ " , " + " ghi " + (tong % 10) + " , " + " nhớ " + nho + ", kết quả : " + ketqua + "\n";
 			} else if (i == (max - 1) && tong >= 10) {
 					conver = "Bước " + j + " : lấy " + so1 + " cộng " + so2 + " cộng " + nho
 						+ " được " + tong + " , " + "ghi " + (tong % 10) + " , " + "nhớ " + nho + ", kết quả : 1" + result + "\n";
@@ -111,29 +111,29 @@ public class MyBigNumber {
 		}
                 
                 if (nho > 0){
-                    result = nho + result;// Nếu số nhớ còn dư thì ghép vào chuỗi kết quả
+                    ketqua = nho + ketqua;// Nếu số nhớ còn dư thì ghép vào chuỗi kết quả
                 }
 				
 		if (num1.contains("-")) {
-			result ="Phần mềm chưa hỗ trợ số âm !";
+			ketqua ="Phần mềm chưa hỗ trợ số âm !";
 		}
 		if (num2.contains("-")) {
-			result ="Phần mềm chưa hỗ trợ số âm !";
+			ketqua ="Phần mềm chưa hỗ trợ số âm !";
 		}
 				
 		f1 = num1.matches(kytu);
 		f2 = num2.matches(kytu);
 				
 		if (!f1) {
-			result ="Vui lòng không nhập chữ hoặc ký tự đặt biệt !";
+			ketqua ="Vui lòng không nhập chữ hoặc ký tự đặt biệt !";
 		}
 		if (!f2) {
-			result ="Vui lòng không nhập chữ hoặc ký tự đặt biệt !";
+			ketqua ="Vui lòng không nhập chữ hoặc ký tự đặt biệt !";
 		}
 				
 		System.out.println(step);
 		
-                return result;// Trả về kết quả thu được
+                return ketqua;// Trả về kết quả thu được
 
     
 

@@ -136,6 +136,31 @@ public class MyBigNumberTest implements IReceiver{
         MyBigNumber instance = new MyBigNumber(this);
         String result = instance.sum(s1, s2);
     }
+	
+    @Test(expected=NumberFormatException.class)
+    public void testSum_N_11() {
+        System.out.println("Test11");
+        String s1 = "-123";
+        String s2 = "1";
+        MyBigNumber instance = new MyBigNumber(this);
+        String result = instance.sum(s1, s2);
+    }
+	@Test(expected=NumberFormatException.class)
+    public void testSum_N_11() {
+        System.out.println("Test11");
+        String s1 = "-123";
+        String s2 = "-1";
+        MyBigNumber instance = new MyBigNumber(this);
+        String result = instance.sum(s1, s2);
+    }
+	@Test(expected=NumberFormatException.class)
+    public void testSum_N_11() {
+        System.out.println("Test11");
+        String s1 = "123";
+        String s2 = "-1";
+        MyBigNumber instance = new MyBigNumber(this);
+        String result = instance.sum(s1, s2);
+    }
     
     @Override
 	public void send(String msg) {
